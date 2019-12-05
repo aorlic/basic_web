@@ -1,0 +1,19 @@
+version: 0.2 
+
+phases: 
+  install:
+    runtime-versions:
+        docker: 18
+
+  build: 
+    commands: 
+    - echo Build started on `date`
+    - echo Building the Docker image...
+    - docker build -t basic_web .
+    - docker tag basic_web:latest 021405706753.dkr.ecr.us-east-2.amazonaws.com/basic_web
+  post_build: 
+    commands: 
+    - echo Build completed on `date` 
+    - echo Pushing to ECR
+    - docker push 021405706753.dkr.ecr.us-east-2.amazonaws.com/basic_web
+

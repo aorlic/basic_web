@@ -15,5 +15,5 @@ phases:
     commands: 
     - echo Build completed on `date` 
     - echo Pushing to ECR
-    - docker push 021405706753.dkr.ecr.us-east-2.amazonaws.com/basic_web
+    - docker push 021405706753.dkr.ecr.us-east-2.amazonaws.com/basic_web:latest
 
